@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <iostream>
 using namespace std;
+#define USINGSORT
 
+#ifdef BUBBLESORT
 int main()
 {
 	int count = 0;
@@ -33,3 +35,27 @@ int main()
 		cout << arr[i] << endl;
 	}
 }
+#endif // BUBBLESORT
+
+#ifdef USINGSORT
+#include <algorithm>
+int main()
+{
+	int count;
+	scanf("%d", &count);
+	int* arr = new int[count];
+
+	for (int i = 0; i < count; i++)
+	{
+		scanf("%d", &arr[i]);
+	}
+
+	sort(arr, arr + count);
+
+	for (int i = 0; i < count; i++)
+	{
+		printf("%d\n", arr[i]);
+	}
+
+}
+#endif // USINGSORT
